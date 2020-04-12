@@ -18,7 +18,7 @@ type DecoratorOptions = HttpModuleOptions & {
 
 export function HTTPModule(options: DecoratorOptions): ConstructorDecorator {
   return <T extends {}>(Target: Class<T>): Class<T> => {
-    const {controllers, ...opts} = options;
+    const { controllers, ...opts } = options;
 
     setModuleContextOptions<
       HttpModuleOptions,
