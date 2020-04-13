@@ -1,6 +1,6 @@
 {
   "name": "@fireless/http",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "FireLess HTTP provider package",
   "main": "index.js",
   "files": [

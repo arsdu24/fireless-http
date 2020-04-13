@@ -1,5 +1,5 @@
 export interface HttpRequest {
-    params: {};
-    query: {};
-    body: {} | any;
+  params: {};
+  query: {};
+  body: {} | any;
 }

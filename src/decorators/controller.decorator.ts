@@ -10,12 +10,12 @@ import {
 } from '@fireless/common';
 import { kebabCase } from 'lodash/fp';
 
-export function HttpController(): ConstructorDecorator;
-export function HttpController(path: string): ConstructorDecorator;
-export function HttpController(
+export function Controller(): ConstructorDecorator;
+export function Controller(path: string): ConstructorDecorator;
+export function Controller(
   options: HttpControllerOptions,
 ): ConstructorDecorator;
-export function HttpController(pathOrOptions?: string | HttpControllerOptions) {
+export function Controller(pathOrOptions?: string | HttpControllerOptions) {
   return <T extends {}>(Controller: Class<T>): Class<T> => {
     let options: HttpControllerOptions = {
       path: kebabCase(Controller.name),
