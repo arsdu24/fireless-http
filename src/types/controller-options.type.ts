@@ -1,4 +1,4 @@
-import { ExpressHandler } from './module-options';
+import { ExpressHandler } from './module-options.type';
 
 export interface HttpControllerOptions {
   path: string;
