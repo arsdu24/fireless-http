@@ -4,14 +4,14 @@ import {
   HttpEvent,
 } from '../types';
 import {
-  HandlerDecorator,
+  KlassMethodDecorator,
   setControllerHandlerContextOptions,
 } from '@fireless/common';
 import { Class } from 'utility-types';
 
 const createHttpMethodHandlerDecorator = (
   type: HttpControllerHandlerOptions['type'],
-) => (path?: string): HandlerDecorator => {
+) => (path?: string): KlassMethodDecorator => {
   return <T extends {}>(target: T, methodName: keyof T): void => {
     setControllerHandlerContextOptions<
       T,

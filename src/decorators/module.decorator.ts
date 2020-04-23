@@ -1,6 +1,6 @@
 import { Class } from 'utility-types';
 import {
-  ConstructorDecorator,
+  KlassDecorator,
   setModuleContextControllers,
   setModuleContextOptions,
 } from '@fireless/common';
@@ -16,7 +16,7 @@ type DecoratorOptions = HttpModuleOptions & {
   controllers: Class<any>[];
 };
 
-export function Module(options: DecoratorOptions): ConstructorDecorator {
+export function Module(options: DecoratorOptions): KlassDecorator {
   return <T extends {}>(Target: Class<T>): Class<T> => {
     const { controllers, ...opts } = options;
 

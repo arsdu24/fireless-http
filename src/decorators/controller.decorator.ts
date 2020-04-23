@@ -4,17 +4,12 @@ import {
   HttpEvent,
 } from '../types';
 import { Class } from 'utility-types';
-import {
-  ConstructorDecorator,
-  setControllerContextOptions,
-} from '@fireless/common';
+import { KlassDecorator, setControllerContextOptions } from '@fireless/common';
 import { kebabCase } from 'lodash/fp';
 
-export function Controller(): ConstructorDecorator;
-export function Controller(path: string): ConstructorDecorator;
-export function Controller(
-  options: HttpControllerOptions,
-): ConstructorDecorator;
+export function Controller(): KlassDecorator;
+export function Controller(path: string): KlassDecorator;
+export function Controller(options: HttpControllerOptions): KlassDecorator;
 export function Controller(pathOrOptions?: string | HttpControllerOptions) {
   return <T extends {}>(Controller: Class<T>): Class<T> => {
     let options: HttpControllerOptions = {
